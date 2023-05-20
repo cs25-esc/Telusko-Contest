@@ -15,7 +15,7 @@ if the index is not the first and last then we will add [(i-1)th row's (j)th col
 
 ![WhatsApp Image 2023-05-20 at 09 18 54](https://github.com/cs25-esc/Telusko-Contest/assets/68850280/a357b4b3-134e-4bb3-8f98-2024cc781208)
 
-**avg time taken by iteration technique - 3.126723527908325 msecs**
+**avg time taken by iteration technique for generating 20 rows- 3.126723527908325 msecs**
 
 <br><br><br>
 **Method - 2 Recursion:**
@@ -35,7 +35,7 @@ def solve(i,j):
         return solve(i-1 , j-1) + solve(i-1,j)     --> here we recusrively call for (i-1)th row's jth and (j-1)th column values
 
 
-**avg time taken by recursive technique - 4.400288105010986 msecs**
+**avg time taken by recursive technique for generating 20 rows - 4.400288105010986 msecs**
 
 <br><br><br>
 
@@ -83,7 +83,7 @@ def solve(i,j):
         return memoized[i][j]
     
 
-**avg time taken by memoized technique - 3.2637522220611572 msecs**
+**avg time taken by memoized technique for generating 20 rows - 3.2637522220611572 msecs**
 
 
 <br><br><br>
