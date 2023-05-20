@@ -45,21 +45,44 @@ Method - 3:
 
 Memoization:
 
-same as in the recursion technique we will recursively find by iterating over each row and each index in the pascal triangle ****but we will not call recusrive call for previously stored values****************
-lets consider i as row iterator and j as column iterator
-for value at index(i,j) we implemented recursive function solve.
+same as in the recursion technique we will recursively find by iterating over each row and each index in the pascal triangle ***but we will not call recusrive call for previously stored values***
+
+since we already know that first and last index of each row is value "1" we keep 1 in the memoize table
+
+code snippet to intialize memoized table:
+
+memoized = []
+for i in range(n):
+    e = []
+    for j in range(i+1):
+        if j == 0 or j == i:
+            e.append(1)
+        else:
+            e.append(0)
+    memoized.append(e) 
+
+**if n = 5 the memoized table looks like**
+
+1
+1 1
+1 0 1
+1 0 0 1
+1 0 0 0 1
+
+then we will call memoize recusrive function for each index in each row
 
 code snippet:
 
 def solve(i,j):
-    
-    if j == 0 or j == i:                          --> this is the base case like the same way we did for iterative method                      
-        return 1
+    #print(i,j)
+    if memoized[i][j]:            --> if it is previously computed we just return that value
+        return memoized[i][j]
     else:
-        return solve(i-1 , j-1) + solve(i-1,j)     --> here we recusrively call for (i-1)th row's jth and (j-1)th column values
+        memoized[i][j] = solve(i-1 , j-1) + solve(i-1,j)            --> we store each computed value for (i-1)th row's jth and (j-1)th column values
+        return memoized[i][j]
+    
 
-
-avg time taken by recursive technique - 4.400288105010986 msecs
+avg time taken by memoized technique - 3.2637522220611572 msecs
 
 
 
