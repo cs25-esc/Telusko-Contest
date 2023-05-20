@@ -45,7 +45,7 @@ Method - 3:
 
 Memoization:
 
-same as in the recursion technique we will recursively find by iterating over each row and each index in the pascal triangle **but we will not call recusrive call for previously stored values**__
+same as in the recursion technique we will recursively find by iterating over each row and each index in the pascal triangle ****but we will not call recusrive call for previously stored values****************
 lets consider i as row iterator and j as column iterator
 for value at index(i,j) we implemented recursive function solve.
 
