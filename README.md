@@ -19,6 +19,27 @@ if the index is not the first and last then we will add [(i-1)th row's (j)th col
 avg time taken by iteration technique - 3.126723527908325 msecs
 
 
+Method - 2:
+
+Recursion:
+
+in the recursion technique we will recursively find by iterating over each row and each index in the pascal triangle.
+lets consider i as row iterator and j as column iterator
+for value at index(i,j) we implemented recursive function solve.
+
+code snippet:
+
+def solve(i,j):
+    
+    if j == 0 or j == i:      --> this is the base case like the same way we did for iterative method                      
+        return 1
+    else:
+        return solve(i-1 , j-1) + solve(i-1,j)     --> here we recusrively call for (i-1)th row's jth and (j-1)th column values
+
+
+avg time taken by iteration technique - 4.400288105010986 msecs
+
+
 
 
 
